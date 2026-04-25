@@ -1,7 +1,6 @@
-* {
-    box-sizing: border-box;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-
 body {
     margin: 0;
     background-color: #F5F7FB;
@@ -20,4 +19,8 @@ button:active {
     font-size: 3rem;
     text-align: center;
     margin-top: 50vh;
+}
+
+#root {
+    padding: 0 16px;
 }
