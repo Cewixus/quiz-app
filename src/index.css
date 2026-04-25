@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F5F7FB;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.98);
+}

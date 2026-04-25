@@ -1,0 +1,105 @@
+
+.quiz-page {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-width: 900px;
+    align-items: start;
+    justify-self: center;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.quiz-page h1 {
+    font-family: "Karla", sans-serif;
+    font-size: 1.2rem;
+    color: #293264;
+    font-weight: bold;
+}
+
+.quiz-page button {
+    border-radius: 1em;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 0.5em 1em;
+    color: #293264;
+    background-color: transparent;
+    border: 2px solid #4D5B9E;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+
+.quiz-page button:hover {
+    color: #3a4680;
+    border-color: #5f6fbf;
+}
+
+.quiz-page .selected {
+    border: 2px solid transparent;
+    background-color: #D6DBF5;
+}
+
+.quiz-page .selected:hover {
+    border: 2px solid transparent;
+}
+
+.question-container {
+    border-bottom: 1px solid #DBDEF0;
+    padding-bottom: 1.5em;
+}
+
+.final-container p {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #293264;
+}
+
+.final-container .check-button {
+    padding: 0.5em 1.5em;
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border-radius: 1em;
+    margin: 0;
+}
+
+.final-container .check-button:hover {
+    color: #F5F7FB;
+    background-color: #5f6fbf;
+}
+
+.final-container {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.question-container .correct { 
+    background-color: #94D7A2;
+    border: 2px solid transparent;
+}
+
+.question-container .incorrect {
+    background-color: #F8BCBC;
+    opacity: 50%;
+}
+
+.question-container .correct:hover {
+    border: 2px solid transparent;
+}
+
+.question-container .other {
+    opacity: 50%;
+}
+
+.quiz-page .loading {
+    font-size: 3rem;
+    align-self: center;
+}
