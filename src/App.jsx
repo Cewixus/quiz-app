@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route} from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import StartPage from './StartPage.jsx'
 import QuizPage from './QuizPage.jsx'
+import js from '@eslint/js'
 
 export default function() {
-    const [questions, setQuestions] = useState([])
+    const [questions, setQuestions] = useState(() => {
+        const saved = localStorage.getItem("quiz")
+        return saved ? JSON.parse(saved) : []
+    })
     const [selected, setSelected] = useState({})
     const [isLoading, setIsLoading] = useState(false)
     const [gameIsOver, setGameIsOver] = useState(false)
     const [score, setScore] = useState(null)
     const [disabled, setDisabled] = useState(false)
-
-    useEffect(() => {
-        const saved = localStorage.getItem("quiz")
-        if(saved){
-            setQuestions(JSON.parse(saved))
-        }
-    }, [])
 
     async function startQuiz() {
         setIsLoading(true)
@@ -76,7 +74,10 @@ export default function() {
  return (
     <Routes>
         <Route path='/' element={<StartPage startQuiz={startQuiz}/>}/>
-        <Route path='/quiz' element={<QuizPage 
+        <Route path='/quiz' element={isLoading ? <p className='loading'>Loading...</p>
+                                    :questions.length === 0 ? <Navigate to='/' replace/>
+                                    :<QuizPage 
+                                    startQuiz={startQuiz}
                                     isLoading={isLoading}
                                     questions={questions} 
                                     selected={selected}

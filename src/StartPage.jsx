@@ -5,8 +5,8 @@ export default function StartPage({startQuiz}){
     const navigate = useNavigate()
 
     async function handleStart() {
-        startQuiz()       
-        navigate('/quiz')
+        startQuiz()   
+        navigate('/quiz')    
     }
 
     return(

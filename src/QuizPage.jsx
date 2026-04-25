@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import {decode} from 'html-entities'
 import clsx from 'clsx'
 import './quizPage.css'
 
-export default function QuizPage({questions, handleSelected, selected, handleCheckAnswers, playAgain, score, gameIsOver, disabled, isLoading}){
-
+export default function QuizPage({questions, handleSelected, selected, handleCheckAnswers, playAgain, score, gameIsOver, disabled, isLoading, startQuiz}){
     const questionElements = questions.map(q => {
         return(<div key={q.id} className='question-container'>
             <h1>{decode(q.question)}</h1>
@@ -28,8 +28,6 @@ export default function QuizPage({questions, handleSelected, selected, handleChe
     
     return(
         <section className="quiz-page">
-            {isLoading ? <p className='loading'>Loading...</p> :
-            <>
             {questionElements}
             <div className='final-container'>
                 {!gameIsOver && <button className='check-button' onClick={handleCheckAnswers}>Check answers</button>}
@@ -39,8 +37,6 @@ export default function QuizPage({questions, handleSelected, selected, handleChe
                     <button className='check-button' onClick={playAgain}>Play again</button>
                 </>}
             </div>
-            </>
-            }
         </section>
     )
 }

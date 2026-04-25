@@ -98,8 +98,3 @@
 .question-container .other {
     opacity: 50%;
 }
-
-.quiz-page .loading {
-    font-size: 3rem;
-    align-self: center;
-}
